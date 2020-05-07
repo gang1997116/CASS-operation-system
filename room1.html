@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>External Access</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="author" content="kelly zhong" />
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+		
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/auto-text.js"></script>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="StyleSheet" href="css/basic-layout.css" />
+	</head>
+	<body>
+		
+		<div id="app">
+			<basic-layout title="PHYSICS MODULE" backweb="startpage.html"></basic-layout>
+			
+			<row-word-de webaddress="lightcipher.html" title="Light Cipher"></row-word-de>
+			<row-word-de v-if="keycard" webaddress="keycard.html" title="Keycard"></row-word-de>
+			<row-word-en v-else password="1101" webaddress="keycard.html" title="Keycard" page="light"></row-word-en>
+			<row-word-de webaddress="orientation.html" title="Orientation"></row-word-de>
+			<audio class="audio" src="Sound/Room1/VoiceOver_Room1_Hint2.wav"></audio>
+		</div>
+		
+		<script type="text/javascript" src="js/compoent.js"></script>
+	
+	
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					keycard: 0,
+				},
+				methods:{
+					
+				},
+				mounted(){
+					// Cookies.remove('count');
+						var coo=Cookies.get('keycard'); // => 'value'
+					
+						if(typeof(coo) == "undefined"){
+							
+							console.log(this.keycard);
+							if(coo==NaN){
+								Cookies.set('count', 0, { expires: 1 }); 
+							}
+						}
+						else if(typeof(coo) != "undefined"){
+							//Cookies.set('count', 0, { expires: 1 }); 
+							//this.count++;
+							this.keycard=coo;
+							console.log(this.keycard);
+						}
+				}
+			});	
+		</script>
+	</body>
+	
+</html>

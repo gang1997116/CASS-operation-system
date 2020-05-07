@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>External Access</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="author" content="kelly zhong" />
+		
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/auto-text.js"></script>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="StyleSheet" href="css/basic-layout.css" />
+	</head>
+	<body>
+		
+		<div id="app">
+			<!-- <basic-layout title="MAIN FRAME" backweb="room3.html"></basic-layout> -->
+			<div class="basic">
+				<div class="cass" >
+					CASS
+				</div>
+				<div class="title" >
+					MAIN FRAME
+				</div>
+			
+				<a id="back-button" href="room3.html">
+					<img class="back-button" src="img/Back-Button.svg" alt="">
+				</a>
+			<img class="basic-layout" src="img/Basic%20Layout.svg" alt="">
+			<img class="files" src="img/files.png">
+			<img class="status" src="img/status.png">
+			</div>
+			<row-button title="System File" btnid="1" page="root"></row-button>		
+			<scan-code codesrc="QRcodes/DeleteSystem.PNG"></scan-code>
+			<push-button distance="far"></push-button>
+			
+		</div>
+		
+		<script type="text/javascript" src="js/compoent.js"></script>
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					
+				},
+				methods:{
+					
+				},
+			
+			});	
+		</script>
+	</body>
+	
+</html>

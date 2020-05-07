@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap');
+@font-face {
+			font-family: cyberfall;
+			src:url("../font/Cyberfall.otf");
+			}
+    body{
+	padding: 0;
+	margin: 0;
+	position: relative;
+	font-size:0.5rem;
+	font-family: 'Raleway', sans-serif;
+	overflow-x:hidden; 
+	overflow-y:auto;
+	background-color: #151514;
+	height: 100vh;
+	box-sizing: border-box;
+	
+	}
+    .viewport{ 
+	max-width:640px; 
+	min-width:300px; 
+	margin:0 auto;
+	}
+	.content{
+		padding-top: 0.6rem;
+	}
+	.text-bg{
+		margin-top: -10vh;
+		height: 120vh;	
+		width: 100vw;
+	}
+	.bg{
+		position: absolute;
+		z-index: -1;
+		height: 100vh;
+		overflow: hidden;
+	}
+	
+	h1{
+		color: white;
+		font-size: 0.8rem;
+		text-align: center;
+		line-height: 10vh;
+		font-weight: 800;
+		
+	}
+	#welcome{
+		margin-top: 0;
+	}
+	.cass{
+	line-height: 10vh;
+	background-color: #FF5252;
+	width: fit-content;
+	font-family: cyberfall;
+	color: white;
+	margin: 0 auto;
+	font-size: 1.0rem;
+	padding: 0;
+	}
+	#logo{
+		position: relative;
+		width: 30vw;
+		margin-left: 35vw;
+		margin-top: 0vh;
+		
+	}
+	#start{
+		position: relative;
+		width: 50vw;
+		height: 18vw;
+		margin-left: 25vw;
+		margin-top:6vh;
+		background-color: #FF0000;
+		border-radius: 20vw/20vw;
+		font-size: 11vw;
+		text-align: center;
+		line-height: 18vw;
+		color: white;
+	}
+	a{
+		text-decoration: none;
+	}
+	

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Communications</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="author" content="kelly zhong" />
+		
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/auto-text.js"></script>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="StyleSheet" href="css/basic-layout.css" />
+		<script>
+			function playvoice(){
+				var voice=document.getElementsByClassName('audio')[0];
+				var voicebtn=document.getElementsByClassName('play-button')[0];
+				if (voice.paused) { //判断音乐是否在播放中，暂停状态
+				                voice.play(); //音乐播放
+				                voicebtn.src="img/play.svg"
+				                 
+				            } else { //播放状态
+				                voice.pause(); //音乐停止
+				                voicebtn.src="img/stop.svg"
+				            }
+			}
+		</script>
+		<style>
+			.basic{
+				height:58vw;
+			}
+			#light-notice{
+					top:0;
+					position: relative;
+					margin-top: 4vh;
+					margin-bottom: 2vh;
+					width: 90vw;
+					height: 30vw;
+					left: 5vw;
+					border: 2px solid white;
+					border-radius: 6vw;
+					font-size: 6vw;
+					color: white;
+					padding-top: 2vw;
+					padding-left: 4vw;
+					line-height: 12vw;
+				
+			}
+			.audio1{
+				margin-top:3vh;
+				margin-left:5vw;
+				width: 90vw;
+			}
+			p{
+				font-size: 5vw;
+				padding-top: 1vh;
+				padding-left: 7vw;
+				color: red;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="app">
+			<div class="basic">
+				<div class="cass" >
+					CASS
+				</div>
+				<div class="title" >
+					COMMUNICATION
+				</div>
+				<img class="play-button" src="img/play.svg" onclick="playvoice()" alt="">
+				<a id="back-button" href="startpage.html">
+					<img class="back-button" src="img/Back-Button.svg" alt="">
+				</a>
+			<img class="basic-layout" src="img/Basic%20Layout.svg" alt="">
+			</div>
+			<div class="notice" id="light-notice">
+			<img src="img/Notification.svg" alt="">Press play to listen the message!
+			</div>
+			<audio class="audio" src="Sound/Room2/VoiceOver_Room2_Hint2.wav"></audio>
+			<audio class="audio1" controls="controls" src="Sound/Room2Tones.wav"></audio>
+			<p>Tips: press numeric keys on the keyboard to play melody.</p>
+		</div>
+		
+		<script type="text/javascript" src="js/compoent.js"></script>
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					
+				},
+				methods:{
+					
+				},
+			
+			});	
+		</script>
+	</body>
+	
+</html>

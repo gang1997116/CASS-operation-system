@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Startpage</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="author" content="kelly zhong" />
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/auto-text.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="StyleSheet" href="css/basic-layout.css" />
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700&display=swap" rel="stylesheet">
+		<script type="text/javascript">
+			function renew(){
+				if(confirm("Are you sure to reset progress?")){
+					Cookies.remove('count');
+					Cookies.remove('keycard');
+					Cookies.remove('root');
+					location.reload();
+				}
+				else{}
+			}
+			
+		</script>
+		<style>
+			.cookie-notice{
+				height: 30vh;
+				width: 100vw;
+				position: absolute;
+				bottom: 0;
+				background-color: #151514;
+				border: 2px solid #FF0000;
+			}
+			p{
+				color: white;
+				font-size: 2.5vh;
+				padding: 2vh;
+				line-height: 3.2vh;
+				margin-bottom: 0;
+
+			}
+			.button1{
+				position: absolute;
+				bottom: 3vh;
+				left:2vh;
+				color: white;
+				height: 5vh;
+				font-size: 2.5vh;
+				border: 1.5px solid white;
+				background-color: transparent;
+				width: 43vw;
+				height: 6vh;
+			}
+			.button2{
+				position: absolute;
+				bottom: 3vh;
+				right:2vh;
+				color: white;
+				height: 5vh;
+				font-size: 2.5vh;
+				border: 1.5px solid #9e9ea8;
+				background-color: transparent;
+				width: 43vw;
+				height: 6vh;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="app">
+			<basic-layout title="FILE SYSTEM" backweb="index.html"><img class="renew-button" src="img/renew.svg" onclick="renew()" alt=""></basic-layout>
+			<div id="inner">
+			
+			<row-word-de v-if="count>=0" webaddress="externalAccess.html" title="Access Settings"></row-word-de>	
+			<row-word-en v-if="count<1" password="Phy1csR00m" webaddress="room1.html" title="Physics Module" page="file"></row-word-en>
+			<row-word-de v-if="count>=1" webaddress="room1.html" title="Physics Module"></row-word-de>	
+			<row-word-en v-if="count<2" password="C0mmsR00m" webaddress="room2.html" title="Communication" page="file"></row-word-en>
+			<row-word-de v-if="count>=2" webaddress="room2.html" title="Communication"></row-word-de>	
+			<row-word-en v-if="count<3" password="Ma1nFram3" webaddress="room3.html" title="Main Frame" page="file" ></row-word-en>
+			<row-word-de v-if="count>=3" webaddress="room3.html" title="Main Frame"></row-word-de>	
+			<!-- <row-button title="Access Settings"  btnid="1" ></row-button>
+			<row-button title="Access Settings"  btnid="2" ></row-button> -->
+			</div>
+			<scan-code codesrc="QRcodes/Move.PNG">
+			</scan-code>
+			<push-button distance="near"></push-button>
+			<div class="cookie-notice">
+				<p>We use our own cookies for recording your game progress. If you continue to use our services, we will assume that you agree to the use of such cookies. Find out more about cookies policy.</p>
+			<button class="button1" type="button" v-on:click="hidenotice">I Agree</button>
+			<button class="button2" type="button"><a href="cookies.html">Learn More</a></button>
+			</div>
+			<audio class="audio" src="Sound/Intro/VoiceOver_Intro.wav"></audio>
+		</div>
+		
+		<script type="text/javascript" src="js/compoent.js"></script>
+		<script>
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					count:Cookies.get('count')||0,
+				},
+				methods:{
+					hidenotice: function(){
+						document.getElementsByClassName('cookie-notice')[0].style.display="none";
+						Cookies.set('agree', 1, { expires: 7 });
+					}
+				},
+				mounted(){
+					// Cookies.remove('count');
+						var coo=Cookies.get('count'); // => 'value'
+						var agree=Cookies.get('agree'); // => 'value'
+						if(typeof(coo) == "undefined"){
+							
+							console.log(this.count);
+							if(coo==NaN){
+								Cookies.set('count', 0, { expires: 1 }); 
+							}
+						}
+						else if(typeof(coo) != "undefined"){
+							//Cookies.set('count', 0, { expires: 1 }); 
+							//this.count++;
+							this.count=coo;
+							console.log(this.count);
+						}
+						if(typeof(agree) != "undefined"){
+							document.getElementsByClassName('cookie-notice')[0].style.display="none";
+							//Cookies.remove('agree'); 
+						}
+				}
+			});	
+		</script>
+		
+	</body>
+	
+</html>

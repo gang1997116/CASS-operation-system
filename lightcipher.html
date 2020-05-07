@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>External Access</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="author" content="kelly zhong" />
+		
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/auto-text.js"></script>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="StyleSheet" href="css/basic-layout.css" />
+		<style>
+			#light-notice{
+					top:0;
+					position: relative;
+					margin-top: 3vh;
+					margin-bottom: 2vh;
+					width: 90vw;
+					height: 30vw;
+					left: 5vw;
+					border: 2px solid white;
+					border-radius: 6vw;
+					font-size: 8vw;
+					color: white;
+					padding-top: 2vw;
+					padding-left: 4vw;
+					line-height: 12vw;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="app">
+			<basic-layout title="LIGHT CIPHER" backweb="room1.html"></basic-layout>
+			<div class="row" style="font-size: 3.5vh;font-weight: 600;padding-left: 12vw;">
+			<div class="col-8">Red</div>
+			  <div class="col-4" style="padding-left: 8vw;">
+						11
+			  </div> </div>	
+			<div class="row" style="font-size: 3.5vh;font-weight: 600;padding-left: 12vw;">
+			<div class="col-8">Blue</div>
+			  <div class="col-4" style="padding-left: 8vw;">
+						10
+			  </div> </div>	
+			<div class="row" style="font-size: 3.5vh;font-weight: 600;padding-left: 12vw;">
+			<div class="col-8">Yellow</div>
+			  <div class="col-4" style="padding-left: 8vw;">
+						00
+			  </div> </div>	
+			<div class="row" style="font-size: 3.5vh;font-weight: 600;padding-left: 12vw;">
+			<div class="col-8">Green</div>
+			  <div class="col-4" style="padding-left: 8vw;">
+						01
+			  </div> </div>		
+			<div class="notice" id="light-notice">
+				<img src="img/Notification.svg" alt="">Now go back and activate 
+the keycard!
+			</div>
+			<scan-code codesrc="QRcodes/KeyCardActivated.PNG"></scan-code>
+			<push-button distance="far"></push-button>
+			<audio class="audio" src="Sound/Room1/VoiceOver_Room1_Hint3.wav"></audio>
+		</div>
+		
+		<script type="text/javascript" src="js/compoent.js"></script>
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					
+				},
+				methods:{
+					
+				},
+			
+			});	
+		</script>
+	</body>
+	
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Orientation</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="author" content="kelly zhong" />
+		
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/auto-text.js"></script>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="StyleSheet" href="css/basic-layout.css" />
+	</head>
+	<body>
+		
+		<div id="app">
+			<basic-layout title="ORIENTATION" backweb="room1.html"></basic-layout>
+			<row-button @changecode="changecode" title="Up" btnid="1" ></row-button>
+			<row-button @changecode="changecode" title="Down" btnid="2" ></row-button>
+			<row-button @changecode="changecode" title="Left" btnid="3" ></row-button>
+			<row-button @changecode="changecode" title="Right" btnid="4" ></row-button>		
+			<scan-code v-if="id==1" codesrc="QRcodes/UP.PNG"></scan-code>
+			<scan-code v-if="id==2" codesrc="QRcodes/Down.PNG"></scan-code>
+			<scan-code v-if="id==3" codesrc="QRcodes/Left.PNG"></scan-code>
+			<scan-code v-if="id==4" codesrc="QRcodes/Right.PNG"></scan-code>
+			<push-button distance="near"></push-button>
+			<audio class="audio" src="Sound/Room1/VoiceOver_Room1_Hint5.wav"></audio>
+		</div>
+		
+		<script type="text/javascript" src="js/compoent.js"></script>
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					id:1,
+				},
+				methods:{
+					changecode: function(e){
+						
+								this.id=e;
+								console.log("id="+this.id);
+							
+						}
+						
+					
+				},
+			
+			});	
+		</script>
+	</body>
+	
+</html>
